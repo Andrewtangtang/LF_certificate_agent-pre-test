@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "question": "What is the role of kube-apiserver in a Kubernetes cluster?",
+        "answer": "The kube-apiserver is the front end of the Kubernetes control plane. It exposes the Kubernetes API and is responsible for processing API requests, validating them, and updating the corresponding objects in etcd."
+    },
+    {
+        "id": 2,
+        "question": "What is kubelet?",
+        "answer": "Kubelet is an agent that runs on each node in the cluster. It makes sure that containers are running in a Pod. It takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy."
+    },
+    {
+        "id": 3,
+        "question": "Explain the function of kube-proxy.",
+        "answer": "kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept. It maintains network rules on nodes. These network rules allow network communication to your Pods from network sessions inside or outside of your cluster."
+    },
+    {
+        "id": 4,
+        "question": "What is etcd in Kubernetes?",
+        "answer": "etcd is a consistent and highly-available key-value store used as Kubernetes' backing store for all cluster data. All configuration data, state data, and metadata of the Kubernetes cluster is stored in etcd."
+    },
+    {
+        "id": 5,
+        "question": "What is a Pod in Kubernetes?",
+        "answer": "A Pod is the smallest and simplest unit in the Kubernetes object model that you create or deploy. A Pod represents a running process on your cluster and can contain one or more containers, such as Docker containers. Containers within a Pod share an IP address and port space, and can find each other via localhost."
+    },
+    {
+        "id": 6,
+        "question": "What is a Kubernetes Service?",
+        "answer": "A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them (sometimes this pattern is called a micro-service). The set of Pods targeted by a Service is usually determined by a selector. It provides a stable IP address and DNS name for a set of Pods."
+    },
+    {
+        "id": 7,
+        "question": "What is a Deployment in Kubernetes?",
+        "answer": "A Deployment provides declarative updates for Pods and ReplicaSets. You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments."
+    },
+    {
+        "id": 8,
+        "question": "What is a Namespace in Kubernetes?",
+        "answer": "Namespaces are a way to divide cluster resources between multiple users (via resource quota). They provide a scope for names. Names of resources need to be unique within a namespace, but not across namespaces."
+    },
+    {
+        "id": 9,
+        "question": "What is a ConfigMap?",
+        "answer": "A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. It allows you to decouple environment-specific configuration from your container images."
+    },
+    {
+        "id": 10,
+        "question": "What is a Secret in Kubernetes?",
+        "answer": "Kubernetes Secrets let you store and manage sensitive information, such as passwords, OAuth tokens, and ssh keys. Storing confidential information in a Secret is safer and more flexible than putting it verbatim in a Pod definition or in a container image."
+    },
+    {
+        "id": 11,
+        "question": "What does `kubectl apply -f <filename>` do?",
+        "answer": "This command applies a configuration to a resource by filename or stdin. The configuration will be created if it doesn't exist, or updated if it does. JSON and YAML formats are accepted."
+    },
+    {
+        "id": 12,
+        "question": "How do you scale a Deployment named 'my-app' to 5 replicas?",
+        "answer": "You can scale the deployment using the command: `kubectl scale deployment my-app --replicas=5`."
+    },
+    {
+        "id": 13,
+        "question": "What is a ReplicaSet?",
+        "answer": "A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods. Deployments are a higher-level concept that manage ReplicaSets and provide declarative updates to Pods along with a lot of other useful features."
+    },
+    {
+        "id": 14,
+        "question": "How can you view the logs of a Pod?",
+        "answer": "You can view the logs of a Pod using the command `kubectl logs <pod-name>`. If the Pod has multiple containers, you can specify the container using `kubectl logs <pod-name> -c <container-name>`."
+    },
+    {
+        "id": 15,
+        "question": "What is Helm?",
+        "answer": "Helm is a package manager for Kubernetes. It helps you define, install, and upgrade even the most complex Kubernetes applications. Helm Charts help you define, install, and upgrade Kubernetes applications."
+    }
+] 

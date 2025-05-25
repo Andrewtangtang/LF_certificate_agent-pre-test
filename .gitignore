@@ -1,0 +1,6 @@
+.env
+.venv
+pipfile.lock
+__pycache__
+llama-api-server/Llama-3.2-8B-Instruct-Q4_K_M.gguf
+llama-api-server/nomic-embed-text-v1.5-f16.gguf
