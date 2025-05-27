@@ -113,7 +113,10 @@ async def amain():
             collected_tool_calls = [] 
             
             for chunk in response_stream:
-                print(chunk)
+                # Check if chunk has choices before accessing
+                if not chunk.choices:
+                    continue
+                    
                 delta = chunk.choices[0].delta
                 if delta.content:
                     print(delta.content, end="", flush=True)
@@ -165,6 +168,9 @@ async def amain():
                 )
                 follow_up_content = ""
                 for chunk in follow_up_response_stream:
+                    # Check if chunk has choices before accessing
+                    if not chunk.choices:
+                        continue
                     if chunk.choices[0].delta.content:
                         print(chunk.choices[0].delta.content, end="", flush=True)
                         follow_up_content += chunk.choices[0].delta.content
