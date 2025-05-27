@@ -27,9 +27,9 @@ ai-agent-lf-cert/
 └── README.md                   # this document
 llama-api-server/               # local LLM runtime + model files
 ├── llama-api-server.wasm       # WasmEdge runtime binary
-├── Llama-3.2-3B-Instruct-Q5_K_M.gguf  
+├── Llama-3.2-8B-Instruct-Q5_K_M.gguf  
 ├── nomic-embed-text-v1.5-f16.gguf     
-└── run-3b.sh                   # script to start the LLM API
+└── run-8b.sh                   # script to start the LLM API
 ```
 ## Prerequisites
 
@@ -66,12 +66,12 @@ In one terminal window, start the local LLM server:
 
 ```bash
 cd llama-api-server
-chmod +x run-3b.sh
-./run-3b.sh
+chmod +x run-8b.sh
+./run-8b.sh
 ```
 
 The local API server will provide both:
-- **LLM conversation functionality** using Llama-3.2-3B-Instruct model
+- **LLM conversation functionality** using Llama-3.2-8B-Instruct model
 - **Text vector embedding functionality** using nomic-embed-text model for semantic search
 
 The server will start on `http://localhost:8080` by default.
@@ -107,7 +107,7 @@ python cli_demo/chat_cli.py
 
 This system runs entirely locally using WasmEdge and GGUF model files:
 
-- **Main LLM**: Llama-3.2-3B-Instruct (Q5_K_M quantized) for natural language understanding and generation
+- **Main LLM**: Llama-3.2-8B (Q5_K_M quantized) for natural language understanding and generation
 - **Embedding Model**: Nomic Embed Text v1.5 for semantic search capabilities
 - **Runtime**: WasmEdge WebAssembly runtime for efficient model execution
 
@@ -131,7 +131,7 @@ The local LLM server is configured with:
 - **Batch size**: 128 for LLM, 8192 for embedding
 - **Threads**: 12 (adjust based on your CPU cores)
 
-You can modify these settings in `llama-api-server/run-3b.sh`.
+You can modify these settings in `llama-api-server/run-8b.sh`.
 
 ### API Endpoints
 
@@ -144,15 +144,14 @@ The local server provides OpenAI-compatible endpoints:
 ### Common Issues
 
 1. **WasmEdge not found**: Make sure WasmEdge is properly installed and in your PATH
-2. **Out of memory**: The 3B model requires at least 4-6GB RAM. Close other applications if needed
+2. **Out of memory**: The 8B model requires at least 8-12GB RAM. Close other applications if needed
 3. **MCP server connection failed**: Ensure the MCP server is running and on the correct port
 4. **Local LLM API not responding**: Check that the LLM server started successfully and is listening on port 8080
 
 ### Performance Tips
 
-- **CPU cores**: Adjust the `--threads` parameter in `run-3b.sh` to match your CPU cores
+- **CPU cores**: Adjust the `--threads` parameter in `run-38.sh` to match your CPU cores
 - **Memory**: Ensure sufficient RAM is available before starting the LLM server
-- **Model loading**: Initial model loading may take 30-60 seconds
 
 ### Logs and Debugging
 
@@ -162,7 +161,7 @@ The local server provides OpenAI-compatible endpoints:
 
 ## Model Information
 
-- **Llama-3.2-3B-Instruct**: Meta's instruction-tuned model, quantized to Q5_K_M for efficiency
+- **Llama-3.2-8B**: Meta's instruction-tuned model, quantized to Q5_K_M for efficiency
 - **Nomic Embed Text v1.5**: High-quality text embedding model for semantic search
 - **Total disk space**: Approximately 2.5GB for both models
 
