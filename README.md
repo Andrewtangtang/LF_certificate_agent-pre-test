@@ -35,7 +35,7 @@ llama-api-server/               # local LLM runtime + model files
 
 - **WasmEdge Runtime**: Required to run the local LLM server
 - **Python 3.12**: For the MCP server and CLI demo
-- **At least 8GB RAM**: To run the 3B parameter model efficiently
+- **At least 16GB RAM**: To run the 8B parameter model efficiently
 
 ### Installing WasmEdge
 
